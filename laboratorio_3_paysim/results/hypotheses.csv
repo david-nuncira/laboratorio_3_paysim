@@ -1,0 +1,3 @@
+hipotesis,H0,estadistico,p_HAC,p_Holm,rechaza_005
+rezagos,Todos los coeficientes del grupo son cero,1507.5019514233984,0.0,0.0,True
+temporales,Todos los coeficientes del grupo son cero,75.08824850889515,8.916692349334317e-15,8.916692349334317e-15,True

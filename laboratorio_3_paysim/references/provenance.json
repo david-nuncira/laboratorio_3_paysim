@@ -1,0 +1,41 @@
+{
+  "repository": "https://github.com/david-nuncira/laboratorio_2_paysim",
+  "retrieved_date": "2026-11-05",
+  "files": [
+    {
+      "path": "results/hourly_series.csv",
+      "github_blob_sha": "cc8c96dcbe4a3b42efb04ab6609fe0807c0b3464",
+      "url": "https://github.com/david-nuncira/laboratorio_2_paysim/blob/main/results/hourly_series.csv"
+    },
+    {
+      "path": "results/analysis_summary.json",
+      "github_blob_sha": "49b7d99165f43da00098c3f2dfc44d56ed0436b1",
+      "url": "https://github.com/david-nuncira/laboratorio_2_paysim/blob/main/results/analysis_summary.json"
+    },
+    {
+      "path": "README.md",
+      "github_blob_sha": "016e6a38def3adf552b9b18594195826d9ef928a",
+      "url": "https://github.com/david-nuncira/laboratorio_2_paysim/blob/main/README.md"
+    },
+    {
+      "path": "notebooks/00_Contexto_y_reproduccion.ipynb",
+      "github_blob_sha": "b66eac87beeb9b5fe473f9c11ec643fc95f7d71f",
+      "url": "https://github.com/david-nuncira/laboratorio_2_paysim/blob/main/notebooks/00_Contexto_y_reproduccion.ipynb"
+    },
+    {
+      "path": "notebooks/01_Descriptivas_Forma_IQR.ipynb",
+      "github_blob_sha": "f0743eeae7e14629180a67ae48f045b5b984fa80",
+      "url": "https://github.com/david-nuncira/laboratorio_2_paysim/blob/main/notebooks/01_Descriptivas_Forma_IQR.ipynb"
+    },
+    {
+      "path": "notebooks/02_Asociaciones_e_Hipotesis.ipynb",
+      "github_blob_sha": "7fbccb87d85366f7bab05f2e9e2979449ec84fa5",
+      "url": "https://github.com/david-nuncira/laboratorio_2_paysim/blob/main/notebooks/02_Asociaciones_e_Hipotesis.ipynb"
+    },
+    {
+      "path": "notebooks/03_Sintesis_y_Estacionalidad.ipynb",
+      "github_blob_sha": "e0a98df35ef8fe688f6a33159e2630d0920005ca",
+      "url": "https://github.com/david-nuncira/laboratorio_2_paysim/blob/main/notebooks/03_Sintesis_y_Estacionalidad.ipynb"
+    }
+  ]
+}

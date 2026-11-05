@@ -1,0 +1,15 @@
+C:\Users\david.nuncira\Documents\Codex\2026-10-29\referenced-chatgpt-conversation-this-is-an\outputs\laboratorio_2_paysim\results\figures\histograma_monto.png
+C:\Users\david.nuncira\Documents\Codex\2026-10-29\referenced-chatgpt-conversation-this-is-an\outputs\laboratorio_2_paysim\results\figures\boxplot_monto.png
+C:\Users\david.nuncira\Documents\Codex\2026-10-29\referenced-chatgpt-conversation-this-is-an\outputs\laboratorio_2_paysim\results\figures\histograma_step.png
+C:\Users\david.nuncira\Documents\Codex\2026-10-29\referenced-chatgpt-conversation-this-is-an\outputs\laboratorio_2_paysim\results\figures\boxplot_step.png
+C:\Users\david.nuncira\Documents\Codex\2026-10-29\referenced-chatgpt-conversation-this-is-an\outputs\laboratorio_2_paysim\results\figures\histograma_transacciones_hora.png
+C:\Users\david.nuncira\Documents\Codex\2026-10-29\referenced-chatgpt-conversation-this-is-an\outputs\laboratorio_2_paysim\results\figures\boxplot_transacciones_hora.png
+C:\Users\david.nuncira\Documents\Codex\2026-10-29\referenced-chatgpt-conversation-this-is-an\outputs\laboratorio_2_paysim\results\figures\barras_tipo_transaccion.png
+C:\Users\david.nuncira\Documents\Codex\2026-10-29\referenced-chatgpt-conversation-this-is-an\outputs\laboratorio_2_paysim\results\figures\scatter_step_monto.png
+C:\Users\david.nuncira\Documents\Codex\2026-10-29\referenced-chatgpt-conversation-this-is-an\outputs\laboratorio_2_paysim\results\figures\serie_transacciones_hora.png
+C:\Users\david.nuncira\Documents\Codex\2026-10-29\referenced-chatgpt-conversation-this-is-an\outputs\laboratorio_2_paysim\results\figures\perfil_intradia.png
+C:\Users\david.nuncira\Documents\Codex\2026-10-29\referenced-chatgpt-conversation-this-is-an\outputs\laboratorio_2_paysim\results\figures\monto_transformado_grupos.png
+C:\Users\david.nuncira\Documents\Codex\2026-10-29\referenced-chatgpt-conversation-this-is-an\outputs\laboratorio_2_paysim\results\figures\scatter_montos_horarios.png
+C:\Users\david.nuncira\Documents\Codex\2026-10-29\referenced-chatgpt-conversation-this-is-an\outputs\laboratorio_2_paysim\results\figures\acf_conteo.png
+C:\Users\david.nuncira\Documents\Codex\2026-10-29\referenced-chatgpt-conversation-this-is-an\outputs\laboratorio_2_paysim\results\figures\distribucion_monto_promedio.png
+C:\Users\david.nuncira\Documents\Codex\2026-10-29\referenced-chatgpt-conversation-this-is-an\outputs\laboratorio_2_paysim\results\figures\barras_tipo_destino.png

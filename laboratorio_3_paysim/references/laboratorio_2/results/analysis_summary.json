@@ -1,0 +1,629 @@
+{
+  "metadata": {
+    "source_file": "transacciones.csv",
+    "source_sha256": "262ae36b53af5b4a7798a1429d389710ff6926f2e81f2d6842e1b3626765f684",
+    "source_bytes": 385653971,
+    "rows": 6362620,
+    "columns": 7,
+    "column_names": [
+      "id_transaccion",
+      "step",
+      "tipo_transaccion",
+      "monto",
+      "cuenta_origen",
+      "cuenta_destino",
+      "tipo_cuenta_destino"
+    ],
+    "sample_n_for_correlations": 200000,
+    "sample_seed": 42,
+    "alpha": 0.05,
+    "rounding_digits": 4,
+    "python": "3.14.7",
+    "package_versions": {
+      "pandas": "3.1.0",
+      "numpy": "2.5.4",
+      "scipy": "1.18.1",
+      "statsmodels": "0.15.0",
+      "scikit-learn": "1.9.1",
+      "matplotlib": "3.11.2",
+      "streamlit": "1.66.1"
+    }
+  },
+  "variable_dictionary": [
+    {
+      "variable": "id_transaccion",
+      "tipo": "Nominal (identificador)",
+      "definicion": "Clave entera; no usar como predictor cuantitativo."
+    },
+    {
+      "variable": "step",
+      "tipo": "Cuantitativa discreta",
+      "definicion": "Índice horario de la simulación; fase inicial sin hora civil documentada."
+    },
+    {
+      "variable": "tipo_transaccion",
+      "tipo": "Nominal",
+      "definicion": "CASH_IN, CASH_OUT, DEBIT, PAYMENT, TRANSFER."
+    },
+    {
+      "variable": "monto",
+      "tipo": "Cuantitativa continua",
+      "definicion": "Unidades monetarias del simulador; no se asume COP."
+    },
+    {
+      "variable": "cuenta_origen",
+      "tipo": "Nominal",
+      "definicion": "Identificador de cuenta emisora."
+    },
+    {
+      "variable": "cuenta_destino",
+      "tipo": "Nominal",
+      "definicion": "Identificador de cuenta receptora."
+    },
+    {
+      "variable": "tipo_cuenta_destino",
+      "tipo": "Nominal",
+      "definicion": "CLIENTE o COMERCIO."
+    },
+    {
+      "variable": "transacciones_hora",
+      "tipo": "Discreta derivada",
+      "definicion": "Conteo de filas por step; unidad hora."
+    },
+    {
+      "variable": "monto_promedio / monto_mediano / monto_total",
+      "tipo": "Continuas derivadas",
+      "definicion": "Media, mediana y suma de monto por hora."
+    },
+    {
+      "variable": "fase_24 / franja_horaria",
+      "tipo": "Cíclica discreta / nominal derivada",
+      "definicion": "step % 24 y bloques 00-05, 06-11, 12-17, 18-23."
+    }
+  ],
+  "data_quality": {
+    "missing_by_column": {
+      "id_transaccion": 0,
+      "step": 0,
+      "tipo_transaccion": 0,
+      "monto": 0,
+      "cuenta_origen": 0,
+      "cuenta_destino": 0,
+      "tipo_cuenta_destino": 0
+    },
+    "empty_text_by_column": {
+      "tipo_transaccion": 0,
+      "cuenta_origen": 0,
+      "cuenta_destino": 0,
+      "tipo_cuenta_destino": 0
+    },
+    "duplicate_id_transaccion": 0,
+    "negative_monto": 0,
+    "zero_monto": 16,
+    "nonfinite_monto": 0,
+    "invalid_step": 0,
+    "invalid_tipo_transaccion": [],
+    "unknown_destination_type": 0,
+    "destination_prefix_inconsistency_known_types": 0
+  },
+  "descriptive_statistics": [
+    {
+      "variable": "step",
+      "unidad": "transacción",
+      "n": 6362620,
+      "media": 243.39724563151657,
+      "mediana": 239.0,
+      "moda": 19.0,
+      "numero_modas": 1,
+      "modas": [
+        19.0
+      ],
+      "frecuencia_moda": 51352,
+      "minimo": 1.0,
+      "maximo": 743.0,
+      "rango": 742.0,
+      "varianza_muestral": 20258.389982730332,
+      "desviacion_estandar": 142.33197104912983,
+      "coeficiente_variacion_porcentaje": 58.47723160540968,
+      "p10": 35.0,
+      "q1": 156.0,
+      "q2": 239.0,
+      "q3": 335.0,
+      "p90": 399.0,
+      "asimetria_fisher": 0.37517688846984887,
+      "curtosis_pearson": 3.3290705550254516,
+      "exceso_curtosis": 0.32907055502545157,
+      "clasificacion_asimetria": "aproximadamente simétrica",
+      "clasificacion_curtosis": "leptocúrtica",
+      "iqr": 179.0,
+      "limite_inferior_iqr": -112.5,
+      "limite_superior_iqr": 603.5,
+      "n_outliers_iqr": 102688,
+      "porcentaje_outliers_iqr": 1.6139263385209237,
+      "media_sin_atipicos": 236.33955816133465,
+      "mediana_sin_atipicos": 236.0,
+      "desviacion_sin_atipicos": 132.25219675476228,
+      "nota": "Exclusión IQR como sensibilidad, no limpieza automática."
+    },
+    {
+      "variable": "monto",
+      "unidad": "transacción",
+      "n": 6362620,
+      "media": 179861.90354913071,
+      "mediana": 74871.94,
+      "moda": 10000000.0,
+      "numero_modas": 1,
+      "modas": [
+        10000000.0
+      ],
+      "frecuencia_moda": 3207,
+      "minimo": 0.0,
+      "maximo": 92445516.64,
+      "rango": 92445516.64,
+      "varianza_muestral": 364644763705.5444,
+      "desviacion_estandar": 603858.2314629357,
+      "coeficiente_variacion_porcentaje": 335.7343715079647,
+      "p10": 4501.3,
+      "q1": 13389.57,
+      "q2": 74871.94,
+      "q3": 208721.4775,
+      "p90": 365423.30900000007,
+      "asimetria_fisher": 30.993949482490404,
+      "curtosis_pearson": 1800.9567053084634,
+      "exceso_curtosis": 1797.9567053084634,
+      "clasificacion_asimetria": "asimétrica positiva",
+      "clasificacion_curtosis": "leptocúrtica",
+      "iqr": 195331.9075,
+      "limite_inferior_iqr": -279608.29125,
+      "limite_superior_iqr": 501719.33875,
+      "n_outliers_iqr": 338078,
+      "porcentaje_outliers_iqr": 5.313502928039078,
+      "media_sin_atipicos": 111534.18030262383,
+      "mediana_sin_atipicos": 63175.815,
+      "desviacion_sin_atipicos": 120398.30690287962,
+      "nota": "Exclusión IQR como sensibilidad, no limpieza automática."
+    },
+    {
+      "variable": "transacciones_hora",
+      "unidad": "hora",
+      "n": 743,
+      "media": 8563.418573351279,
+      "mediana": 529.0,
+      "moda": 10.0,
+      "numero_modas": 1,
+      "modas": [
+        10.0
+      ],
+      "frecuencia_moda": 60,
+      "minimo": 2.0,
+      "maximo": 51352.0,
+      "rango": 51350.0,
+      "varianza_muestral": 179257106.0631047,
+      "desviacion_estandar": 13388.693217155462,
+      "coeficiente_variacion_porcentaje": 156.3475275962812,
+      "p10": 8.0,
+      "q1": 12.0,
+      "q2": 529.0,
+      "q3": 12317.0,
+      "p90": 31833.000000000007,
+      "asimetria_fisher": 1.3890502770841173,
+      "curtosis_pearson": 3.4629049624792283,
+      "exceso_curtosis": 0.4629049624792283,
+      "clasificacion_asimetria": "asimétrica positiva",
+      "clasificacion_curtosis": "leptocúrtica",
+      "iqr": 12305.0,
+      "limite_inferior_iqr": -18445.5,
+      "limite_superior_iqr": 30774.5,
+      "n_outliers_iqr": 87,
+      "porcentaje_outliers_iqr": 11.709286675639301,
+      "media_sin_atipicos": 4773.850609756098,
+      "mediana_sin_atipicos": 53.5,
+      "desviacion_sin_atipicos": 8762.48341940562,
+      "nota": "Exclusión IQR como sensibilidad, no limpieza automática."
+    },
+    {
+      "variable": "monto_promedio",
+      "unidad": "hora",
+      "n": 743,
+      "media": 701708.6333864456,
+      "mediana": 210260.11523108356,
+      "moda": null,
+      "numero_modas": 0,
+      "modas": [],
+      "frecuencia_moda": 1,
+      "minimo": 42418.85,
+      "maximo": 6227980.352,
+      "rango": 6185561.502,
+      "varianza_muestral": 922458462427.4159,
+      "desviacion_estandar": 960447.0117749422,
+      "coeficiente_variacion_porcentaje": 136.8726229204029,
+      "p10": 117264.12937861188,
+      "q1": 148538.61969348954,
+      "q2": 210260.11523108356,
+      "q3": 879192.4816666667,
+      "p90": 1982148.9898730186,
+      "asimetria_fisher": 2.4435086033350455,
+      "curtosis_pearson": 9.843091815776951,
+      "exceso_curtosis": 6.843091815776951,
+      "clasificacion_asimetria": "asimétrica positiva",
+      "clasificacion_curtosis": "leptocúrtica",
+      "iqr": 730653.8619731772,
+      "limite_inferior_iqr": -947442.1732662763,
+      "limite_superior_iqr": 1975173.2746264325,
+      "n_outliers_iqr": 75,
+      "porcentaje_outliers_iqr": 10.094212651413189,
+      "media_sin_atipicos": 436984.1944951454,
+      "mediana_sin_atipicos": 190196.0981392486,
+      "desviacion_sin_atipicos": 465736.62410347065,
+      "nota": "Exclusión IQR como sensibilidad, no limpieza automática."
+    }
+  ],
+  "continuous_association": [
+    {
+      "estado": "calculado",
+      "left": "step",
+      "right": "monto",
+      "n": 200000,
+      "alcance": "Transacciones; step discreta. P nominal bajo independencia.",
+      "covarianza_muestral": 1892173.2296601837,
+      "pearson_coef": 0.023513318933577842,
+      "pearson_p": 7.223798127088385e-26,
+      "spearman_coef": 0.0003575810657449898,
+      "spearman_p": 0.8729487257211551,
+      "kendall_coef": 7.831104749627432e-05,
+      "kendall_p": 0.9582010672379013
+    },
+    {
+      "estado": "calculado",
+      "left": "monto_promedio",
+      "right": "monto_mediano",
+      "n": 743,
+      "alcance": "Horas; continuas derivadas. P nominal por dependencia temporal.",
+      "covarianza_muestral": 575819150580.5616,
+      "pearson_coef": 0.8066769098877176,
+      "pearson_p": 2.0054695396703028e-171,
+      "spearman_coef": 0.9019386868225984,
+      "spearman_p": 2.012708889251154e-272,
+      "kendall_coef": 0.7338828164395091,
+      "kendall_p": 6.739438322048116e-197
+    },
+    {
+      "estado": "calculado",
+      "left": "monto_total",
+      "right": "monto_promedio",
+      "n": 743,
+      "alcance": "Horas; continuas derivadas. P nominal por dependencia temporal.",
+      "covarianza_muestral": -735612500850691.2,
+      "pearson_coef": -0.28729138939879545,
+      "pearson_p": 1.3850546630410168e-15,
+      "spearman_coef": -0.49437467723270134,
+      "spearman_p": 4.751826211095354e-47,
+      "kendall_coef": -0.21509288852288933,
+      "kendall_p": 1.7267031244989536e-18
+    },
+    {
+      "estado": "calculado",
+      "left": "step",
+      "right": "monto",
+      "n": 189359,
+      "alcance": "Sensibilidad IQR de la misma muestra.",
+      "covarianza_muestral": -174078.41400870885,
+      "pearson_coef": -0.010161710502432902,
+      "pearson_p": 9.779421999251469e-06,
+      "spearman_coef": -0.0017178337407682753,
+      "spearman_p": 0.45475104227011776,
+      "kendall_coef": -0.0012872509661631638,
+      "kendall_p": 0.4018707682267445
+    }
+  ],
+  "categorical_association": [
+    {
+      "pair": "tipo_transaccion_vs_tipo_cuenta_destino",
+      "estado": "calculado",
+      "left": "tipo_transaccion",
+      "right": "tipo_cuenta_destino",
+      "n": 6362620,
+      "chi2": 6362620.0,
+      "p_value": 0.0,
+      "degrees_freedom": 4,
+      "mutual_information_nats": 0.6397981172285446,
+      "normalized_mutual_information": 0.6570418967237395,
+      "cramers_v": 1.0,
+      "min_expected": 14010.068311481748,
+      "percent_expected_below_5": 0.0,
+      "observed": [
+        {
+          "tipo_transaccion": "CASH_IN",
+          "CLIENTE": 1399284,
+          "COMERCIO": 0
+        },
+        {
+          "tipo_transaccion": "CASH_OUT",
+          "CLIENTE": 2237500,
+          "COMERCIO": 0
+        },
+        {
+          "tipo_transaccion": "DEBIT",
+          "CLIENTE": 41432,
+          "COMERCIO": 0
+        },
+        {
+          "tipo_transaccion": "PAYMENT",
+          "CLIENTE": 0,
+          "COMERCIO": 2151495
+        },
+        {
+          "tipo_transaccion": "TRANSFER",
+          "CLIENTE": 532909,
+          "COMERCIO": 0
+        }
+      ],
+      "expected": [
+        {
+          "tipo_transaccion": "CASH_IN",
+          "CLIENTE": 926121.6031288997,
+          "COMERCIO": 473162.3968711003
+        },
+        {
+          "tipo_transaccion": "CASH_OUT",
+          "CLIENTE": 1480898.1500545372,
+          "COMERCIO": 756601.8499454628
+        },
+        {
+          "tipo_transaccion": "DEBIT",
+          "CLIENTE": 27421.931688518252,
+          "COMERCIO": 14010.068311481748
+        },
+        {
+          "tipo_transaccion": "PAYMENT",
+          "CLIENTE": 1423975.403509089,
+          "COMERCIO": 727519.596490911
+        },
+        {
+          "tipo_transaccion": "TRANSFER",
+          "CLIENTE": 352707.9116189557,
+          "COMERCIO": 180201.08838104428
+        }
+      ]
+    },
+    {
+      "pair": "tipo_transaccion_vs_franja_horaria",
+      "estado": "calculado",
+      "left": "tipo_transaccion",
+      "right": "franja_horaria",
+      "n": 6362620,
+      "chi2": 49171.83363866936,
+      "p_value": 0.0,
+      "degrees_freedom": 12,
+      "mutual_information_nats": 0.0035740649200027685,
+      "normalized_mutual_information": 0.0029477017645329747,
+      "cramers_v": 0.050755087556960954,
+      "min_expected": 733.2593114157376,
+      "percent_expected_below_5": 0.0,
+      "observed": [
+        {
+          "tipo_transaccion": "CASH_IN",
+          "00-05": 19329,
+          "06-11": 271545,
+          "12-17": 604705,
+          "18-23": 503705
+        },
+        {
+          "tipo_transaccion": "CASH_OUT",
+          "00-05": 18233,
+          "06-11": 416324,
+          "12-17": 992042,
+          "18-23": 810901
+        },
+        {
+          "tipo_transaccion": "DEBIT",
+          "00-05": 3345,
+          "06-11": 6941,
+          "12-17": 15228,
+          "18-23": 15918
+        },
+        {
+          "tipo_transaccion": "PAYMENT",
+          "00-05": 61866,
+          "06-11": 397036,
+          "12-17": 846174,
+          "18-23": 846419
+        },
+        {
+          "tipo_transaccion": "TRANSFER",
+          "00-05": 9832,
+          "06-11": 102716,
+          "12-17": 231635,
+          "18-23": 188726
+        }
+      ],
+      "expected": [
+        {
+          "tipo_transaccion": "CASH_IN",
+          "00-05": 24764.385555007215,
+          "06-11": 262711.1934404381,
+          "12-17": 591544.3189528842,
+          "18-23": 520264.10205167055
+        },
+        {
+          "tipo_transaccion": "CASH_OUT",
+          "00-05": 39599.04685491197,
+          "06-11": 420083.6251418441,
+          "12-17": 945898.3406206877,
+          "18-23": 831918.9873825562
+        },
+        {
+          "tipo_transaccion": "DEBIT",
+          "00-05": 733.2593114157376,
+          "06-11": 7778.728382961736,
+          "12-17": 17515.289407193894,
+          "18-23": 15404.722898428634
+        },
+        {
+          "tipo_transaccion": "PAYMENT",
+          "00-05": 38076.939134350316,
+          "06-11": 403936.45545231365,
+          "12-17": 909539.9107726063,
+          "18-23": 799941.6946407298
+        },
+        {
+          "tipo_transaccion": "TRANSFER",
+          "00-05": 9431.369144314764,
+          "06-11": 100051.99758244245,
+          "12-17": 225286.14024662797,
+          "18-23": 198139.49302661483
+        }
+      ]
+    }
+  ],
+  "mixed_association": {
+    "estado": "calculado",
+    "normalidad_por_grupo": [
+      {
+        "grupo": "CASH_IN",
+        "n_total": 1399284,
+        "n_shapiro": 5000,
+        "W": 0.9212428222926218,
+        "p_value": 2.815727931398674e-45
+      },
+      {
+        "grupo": "CASH_OUT",
+        "n_total": 2237500,
+        "n_shapiro": 5000,
+        "W": 0.4636472110349025,
+        "p_value": 1.12850708384905e-81
+      },
+      {
+        "grupo": "DEBIT",
+        "n_total": 41432,
+        "n_shapiro": 5000,
+        "W": 0.3114063760507587,
+        "p_value": 3.196954660704462e-87
+      },
+      {
+        "grupo": "PAYMENT",
+        "n_total": 2151495,
+        "n_shapiro": 5000,
+        "W": 0.8317791602681134,
+        "p_value": 2.3013616260442516e-58
+      },
+      {
+        "grupo": "TRANSFER",
+        "n_total": 532909,
+        "n_shapiro": 5000,
+        "W": 0.26622187157168287,
+        "p_value": 1.1584469756623129e-88
+      }
+    ],
+    "group_summary": [
+      {
+        "grupo": "CASH_IN",
+        "n": 1399284,
+        "media": 168920.2420040964,
+        "mediana": 143427.71000000002,
+        "desviacion": 126508.25527180845
+      },
+      {
+        "grupo": "CASH_OUT",
+        "n": 2237500,
+        "media": 176273.96434614077,
+        "mediana": 147072.185,
+        "desviacion": 175329.74448346382
+      },
+      {
+        "grupo": "DEBIT",
+        "n": 41432,
+        "media": 5483.6653137671365,
+        "mediana": 3048.99,
+        "desviacion": 13318.535518284696
+      },
+      {
+        "grupo": "PAYMENT",
+        "n": 2151495,
+        "media": 13057.60466018745,
+        "mediana": 9482.19,
+        "desviacion": 12556.450185716425
+      },
+      {
+        "grupo": "TRANSFER",
+        "n": 532909,
+        "media": 910647.0096454928,
+        "mediana": 486308.39,
+        "desviacion": 1879573.5289080313
+      }
+    ],
+    "levene_median_center": {
+      "statistic": 177416.12440916258,
+      "p_value": 0.0
+    },
+    "anova": {
+      "F": 278715.54207883857,
+      "p_value": 0.0,
+      "df_between": 4,
+      "df_within": 6362615,
+      "eta_squared": 0.14909603108377295
+    },
+    "welch_anova": {
+      "F": 1039325.8302230849,
+      "p_value": 0.0,
+      "df": [
+        4.0,
+        303432.36664809345
+      ]
+    },
+    "kruskal_wallis": {
+      "H": 3906986.681942401,
+      "p_value": 0.0,
+      "epsilon_squared": 0.6140529769508922
+    }
+  },
+  "seasonality": {
+    "n_steps": 743,
+    "min_step": 1,
+    "max_step": 743,
+    "hora_pico_promedio": 19,
+    "promedio_hora_pico": 20897.225806451614,
+    "promedio_hora_menor": 40.03225806451613,
+    "acf_lag_1": 0.9235426141564033,
+    "acf_lag_24": 0.7546011207852519,
+    "lag_target_correlations": [
+      {
+        "estado": "calculado",
+        "left": "rezago_1",
+        "right": "transacciones_hora",
+        "n": 742,
+        "alcance": "Horas; p nominal, autocorrelación no implica causalidad.",
+        "covarianza_muestral": 165774901.65962073,
+        "pearson_coef": 0.9239159164227175,
+        "pearson_p": 5.3580687045347e-311,
+        "spearman_coef": 0.6841936118619588,
+        "spearman_p": 1.5209633177839535e-103,
+        "kendall_coef": 0.5220779097498746,
+        "kendall_p": 2.100339111706902e-96
+      },
+      {
+        "estado": "calculado",
+        "left": "rezago_24",
+        "right": "transacciones_hora",
+        "n": 719,
+        "alcance": "Horas; p nominal, autocorrelación no implica causalidad.",
+        "covarianza_muestral": 139935688.7767113,
+        "pearson_coef": 0.8045817818253289,
+        "pearson_p": 1.9502953158511335e-164,
+        "spearman_coef": 0.6071368750019044,
+        "spearman_p": 1.2449746434815427e-73,
+        "kendall_coef": 0.46852147192920485,
+        "kendall_p": 1.1379825481293013e-75
+      }
+    ],
+    "ljung_box_lag_24": {
+      "statistic": 3775.312404409126,
+      "p_value": 0.0
+    },
+    "adf_log1p": {
+      "statistic": -2.3726907691113874,
+      "p_value": 0.14959303302598725,
+      "used_lags": 20
+    }
+  }
+}

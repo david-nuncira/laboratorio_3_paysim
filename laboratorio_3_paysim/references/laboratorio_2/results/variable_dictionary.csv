@@ -1,0 +1,11 @@
+﻿variable,tipo,definicion
+id_transaccion,Nominal (identificador),Clave entera; no usar como predictor cuantitativo.
+step,Cuantitativa discreta,Índice horario de la simulación; fase inicial sin hora civil documentada.
+tipo_transaccion,Nominal,"CASH_IN, CASH_OUT, DEBIT, PAYMENT, TRANSFER."
+monto,Cuantitativa continua,Unidades monetarias del simulador; no se asume COP.
+cuenta_origen,Nominal,Identificador de cuenta emisora.
+cuenta_destino,Nominal,Identificador de cuenta receptora.
+tipo_cuenta_destino,Nominal,CLIENTE o COMERCIO.
+transacciones_hora,Discreta derivada,Conteo de filas por step; unidad hora.
+monto_promedio / monto_mediano / monto_total,Continuas derivadas,"Media, mediana y suma de monto por hora."
+fase_24 / franja_horaria,Cíclica discreta / nominal derivada,"step % 24 y bloques 00-05, 06-11, 12-17, 18-23."

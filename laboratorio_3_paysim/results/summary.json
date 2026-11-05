@@ -1,0 +1,20 @@
+{
+  "n_transacciones": 6362620,
+  "n_horas": 743,
+  "n_supervisadas": 719,
+  "modelo_seleccionado_validacion_MAE": "lineal_lags",
+  "baseline_seleccionado_validacion_MAE": "estacional_24",
+  "test_MAE_lineal": 1040.0608237515053,
+  "test_MAE_baseline": 1421.375,
+  "mejora_MAE_pct_vs_baseline": 26.8271340250458,
+  "sha256_hourly": "43fa3acbfe4217b1d6224beef314326c72365b4fdd54b6152bf8e8e0bad36f1a",
+  "protocol": "rolling one-step, parámetros congelados, lags reales previos disponibles; recorte a cero predefinido",
+  "python": "3.12.14",
+  "versions": {
+    "pandas": "3.1.1",
+    "numpy": "2.5.4",
+    "scikit-learn": "1.9.1",
+    "statsmodels": "0.15.0",
+    "streamlit": "1.66.1"
+  }
+}

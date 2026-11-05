@@ -1,0 +1,16 @@
+requisito,evidencia
+1 Introducción y objetivo,notebooks/Laboratorio_3.ipynb apartado 1
+2 Descripción de variables,notebooks/Laboratorio_3.ipynb apartado 2
+3 Limpieza y preprocesamiento,notebooks/Laboratorio_3.ipynb apartado 3 y src/modeling.py
+4 EDA,notebooks/Laboratorio_3.ipynb apartado 4 y results/figures
+5 Hipótesis e interpretación,notebooks/Laboratorio_3.ipynb apartado 5 y results/hypotheses.csv
+6 Pipelines y escalamiento,notebooks/Laboratorio_3.ipynb apartado 6 y src/modeling.py
+7 Entrenamiento,notebooks/Laboratorio_3.ipynb apartado 7 y results/cv_metrics.csv
+8 MAE RMSE MAPE R2,notebooks/Laboratorio_3.ipynb apartado 8 y results/metrics.csv
+9 Conclusiones,notebooks/Laboratorio_3.ipynb apartado 9 y reports/Informe_Laboratorio_3.pdf
+Streamlit descripción,app.py sección Proyecto
+Visualizaciones interactivas,app.py secciones Exploración y Evaluación
+Predicciones,app.py sección Pronosticar
+Inputs y filtros,intervalo de horas y comparación de modelos y entradas de rezagos y horizonte
+Sin fuga temporal,partición cronológica y escalador por entrenamiento y pruebas scripts/verify.py
+Continuidad con Laboratorio 2,references/laboratorio_2 y references/provenance.json

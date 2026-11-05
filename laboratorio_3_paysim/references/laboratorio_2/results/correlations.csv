@@ -1,0 +1,5 @@
+﻿estado,left,right,n,alcance,covarianza_muestral,pearson_coef,pearson_p,spearman_coef,spearman_p,kendall_coef,kendall_p
+calculado,step,monto,200000,Transacciones; step discreta. P nominal bajo independencia.,1892173.2297,0.0235,0.0000,0.0004,0.8729,0.0001,0.9582
+calculado,monto_promedio,monto_mediano,743,Horas; continuas derivadas. P nominal por dependencia temporal.,575819150580.5616,0.8067,0.0000,0.9019,0.0000,0.7339,0.0000
+calculado,monto_total,monto_promedio,743,Horas; continuas derivadas. P nominal por dependencia temporal.,-735612500850691.2500,-0.2873,0.0000,-0.4944,0.0000,-0.2151,0.0000
+calculado,step,monto,189359,Sensibilidad IQR de la misma muestra.,-174078.4140,-0.0102,0.0000,-0.0017,0.4548,-0.0013,0.4019

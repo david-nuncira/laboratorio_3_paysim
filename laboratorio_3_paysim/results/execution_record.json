@@ -1,0 +1,30 @@
+{
+  "fecha": "2026-11-05",
+  "python": "3.12.14",
+  "analysis_script": "PASS: datos reales horarios, sin CSV transaccional",
+  "notebook": "PASS: 9 celdas de código ejecutadas, sin errores",
+  "streamlit": "PASS: 5 pantallas e interacciones",
+  "pdf": "PASS: 10 páginas renderizadas y revisadas visualmente",
+  "fuentes": "PASS: resumen y serie coinciden con copia previa; 4 notebooks coinciden con blobs GitHub",
+  "checks": {
+    "serie_continua_total_y_filas": true,
+    "lags_no_usan_objetivo_actual_ni_futuro": true,
+    "escalador_ajustado_solo_train": true,
+    "metricas_con_formulas_independientes": true,
+    "recursivo_sin_observaciones_test": true,
+    "notebooks_previos_identicos_a_GitHub": true,
+    "streamlit_5_pantallas_filtros_prediccion_y_horizonte": true
+  },
+  "repo_remoto_modificado": false,
+  "limitaciones": [
+    "CSV original no recuperado: no se repitió auditoría transaccional",
+    "Colab documentado, no probado allí",
+    "R2 negativo y errores elevados limitan el uso operativo"
+  ],
+  "comandos_verificados": [
+    "python scripts/run_analysis.py",
+    "python scripts/build_deliverables.py",
+    "NotebookClient: notebooks/Laboratorio_3.ipynb",
+    "python scripts/verify.py"
+  ]
+}
