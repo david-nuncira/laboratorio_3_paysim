@@ -1,3 +1,4 @@
-hipotesis,H0,estadistico,p_HAC,p_Holm,rechaza_005
-rezagos,Todos los coeficientes del grupo son cero,1507.5019514233984,0.0,0.0,True
-temporales,Todos los coeficientes del grupo son cero,75.08824850889515,8.916692349334317e-15,8.916692349334317e-15,True
+hipotesis,estadistico,gl,p,p_Holm,rechaza_H0_alpha_005
+H1: lag_1 y lag_24 = 0 (Wald HAC),1507.5019514249916,2,0.0,0.0,True
+H2: variables temporales = 0 (Wald HAC),75.08824850903927,5,8.91669234871676e-15,8.91669234871676e-15,True
+H3: misma distribución en las 24 fases (Kruskal-Wallis),208.10972396916938,23,9.140373274729868e-32,1.8280746549459737e-31,True

@@ -1,0 +1,4 @@
+grupo,n,inicio,fin
+train (HW usa 1-455),431,25,455
+validacion,144,456,599
+test,144,600,743

@@ -1,4 +1,4 @@
-step,transacciones_hora,monto_total,monto_promedio,monto_mediano,hora_dia
+﻿step,transacciones_hora,monto_total,monto_promedio,monto_mediano,hora_dia
 1,2708,285429181.15,105402.20869645494,10286.17,1
 2,1014,85921604.02000001,84735.30968441816,10522.775,2
 3,552,43293884.42,78430.9500362319,14091.98,3
